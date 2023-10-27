@@ -1,7 +1,7 @@
 import './Celestial.css';
 
 import Celestial from './Celestial.js';
-import Year from './Constants.js';
+import {Year} from './Constants.js';
 
 const Mars = props => {
   return (

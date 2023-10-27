@@ -32,7 +32,7 @@ const Celestial = props => {
       <div className='w-0 d-flex justify-content-center align-items-center'>
         <div>
           <svg className='d-block' width={(distance + radius) * 2} height={(distance + radius) * 2}>
-            <circle cx={distance + radius} cy={distance + radius} r={distance - 1} fill={'transparent'} stroke={'#FAFAFA'} strokeWidth={2} strokeDasharray={8} />
+            <circle className='orbit' cx={distance + radius} cy={distance + radius} r={distance - 0.5} />
           </svg>
         </div>
       </div>
@@ -41,7 +41,7 @@ const Celestial = props => {
           <div className='w-0 d-flex align-items-center justify-content-center'>
             {children}
           </div>
-          <div className='w-0 d-flex align-items-center justify-content-center' style={{zIndex: 99}}>
+          <div className='celestial w-0 d-flex align-items-center justify-content-center'>
             <div>
               <svg className='d-block' width={radius * 2} height={radius * 2}>
                 <circle cx={radius} cy={radius} r={radius} fill={props.fill} />

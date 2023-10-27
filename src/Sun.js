@@ -1,3 +1,5 @@
+import './Celestial.css';
+
 const Sun = props => {
   const radius = 80;
   const children = [];
@@ -23,9 +25,9 @@ const Sun = props => {
   return (
     <div className='d-flex align-items-center justify-content-center'>
       {children}
-      <div className='w-0 d-flex align-items-center justify-content-center' style={{zIndex: 999}}>
+      <div className='sun w-0 d-flex align-items-center justify-content-center'>
         <div>
-          <svg width={radius * 2} height={radius * 2}>
+          <svg className='d-block' width={radius * 2} height={radius * 2}>
             <circle cx={radius} cy={radius} r={radius} fill='#FBC02D' />
           </svg>
         </div>

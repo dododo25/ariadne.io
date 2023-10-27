@@ -1,3 +1,18 @@
+.star {
+  z-index: 999;
+}
+
+.celestial {
+  z-index: 99;
+}
+
+.orbit {
+  stroke-width: 1px;
+  stroke: #FAFAFA;
+  stroke-dasharray: 12;
+  fill: transparent;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);

@@ -1,6 +1,6 @@
 import './Celestial.css';
 
-import Year from './Constants.js';
+import {Year} from './Constants.js';
 
 const Saturn = props => {
   const radius = 26;
@@ -39,7 +39,7 @@ const Saturn = props => {
       <div className='w-0 d-flex justify-content-center align-items-center'>
         <div>
           <svg className='d-block' width={(distance + radius) * 2} height={(distance + radius) * 2}>
-            <circle cx={distance + radius} cy={distance + radius} r={distance - 1} fill={'transparent'} stroke={'#FAFAFA'} strokeWidth={2} strokeDasharray={8} />
+            <circle className='orbit' cx={distance + radius} cy={distance + radius} r={distance - 1} />
           </svg>
         </div>
       </div>
@@ -48,7 +48,7 @@ const Saturn = props => {
           <div className='w-0 d-flex align-items-center justify-content-center'>
             {children}
           </div>
-          <div className='w-0 d-flex align-items-center justify-content-center' style={{zIndex: 99, animation: planetAnimation}}>
+          <div className='celestial w-0 d-flex align-items-center justify-content-center' style={{animation: planetAnimation}}>
             <div>
               <svg className='d-block' width={svgSize} height={svgSize}>
                   <circle cx={svgSize / 2} cy={svgSize / 2} r={radius} fill='#D2B48C' />
