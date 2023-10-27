@@ -4,7 +4,7 @@ import Celestial from './Celestial.js';
 
 const Moon = props => {
     return (
-        <Celestial radius={3} distance={props.distance} duration={0.01} fill='#BDBDBD'>
+        <Celestial radius={3} distance={props.distance} duration={60 * 60 * 24 * 27.3} fill='#BDBDBD'>
             {props.children}
         </Celestial>
     );
