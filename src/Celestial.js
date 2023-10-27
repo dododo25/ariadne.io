@@ -5,7 +5,7 @@ const Celestial = props => {
   const radius = props.radius;
   const shift = props.shift ? props.shift : 0;
 
-  const animation = `${props.duration}s linear 0s orbit-spin infinite`;
+  const animation = `${props.duration}s linear 0s spin infinite`;
 
   const children = [];
 

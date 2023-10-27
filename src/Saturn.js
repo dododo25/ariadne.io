@@ -1,15 +1,18 @@
 import './Celestial.css';
 
+import Year from './Constants.js';
+
 const Saturn = props => {
   const radius = 26;
   const svgSize = 80;
 
-  const duration = 29.46 * 60 * 60 * 24 * 365.2425;
+  const duration = 29.46 * Year;
 
   const distance = props.distance;
   const shift = props.shift ? props.shift : 0;
 
-  const animation = `${duration}s linear 0s orbit-spin infinite`;
+  const orbitAnimation = `${duration}s linear 0s spin infinite`;
+  const planetAnimation = `${duration}s linear 0s spin-backward infinite`;
 
   const children = [];
 
@@ -41,11 +44,11 @@ const Saturn = props => {
         </div>
       </div>
       <div className='w-0 d-flex align-items-center justify-content-center' style={{transform: `rotate(${shift}deg)`}}>
-        <div className='d-flex align-items-center flex-shrink-0' style={{width: distance * 2, animation: animation}}>
+        <div className='d-flex align-items-center flex-shrink-0' style={{width: distance * 2, animation: orbitAnimation}}>
           <div className='w-0 d-flex align-items-center justify-content-center'>
             {children}
           </div>
-          <div className='w-0 d-flex align-items-center justify-content-center' style={{zIndex: 99}}>
+          <div className='w-0 d-flex align-items-center justify-content-center' style={{zIndex: 99, animation: planetAnimation}}>
             <div>
               <svg className='d-block' width={svgSize} height={svgSize}>
                   <circle cx={svgSize / 2} cy={svgSize / 2} r={radius} fill='#D2B48C' />

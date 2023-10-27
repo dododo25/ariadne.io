@@ -21,6 +21,10 @@ div#root {
   width: 0;
 }
 
+.h-0 {
+  height: 0;
+}
+
 .vw-50 {
   width: 50vw;
 }
