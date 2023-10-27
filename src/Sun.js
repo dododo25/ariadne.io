@@ -1,7 +1,5 @@
-import './Celestial.css';
-
-const Star = props => {
-    const radius = props.radius;
+const Sun = props => {
+    const radius = 80;
     const children = [];
 
     if (props.children && props.children.length) {
@@ -9,14 +7,14 @@ const Star = props => {
             const child = props.children[i];
 
             children.push(
-                <div key={i} className='d-flex justify-content-center align-items-center' style={{width: 0}}>
+                <div key={i} className='w-0 d-flex justify-content-center align-items-center'>
                     {child}
                 </div>
             );
         }
     } else if (props.children) {
         children.push(
-            <div className='d-flex justify-content-center align-items-center' style={{width: 0}}>
+            <div key={0} className='w-0 d-flex justify-content-center align-items-center'>
                 {props.children}
             </div>
         );
@@ -25,10 +23,10 @@ const Star = props => {
     return (
         <div className='d-flex align-items-center justify-content-center'>
             {children}
-            <div className='d-flex align-items-center justify-content-center' style={{width: 0, zIndex: 999}}>
+            <div className='w-0 d-flex align-items-center justify-content-center' style={{zIndex: 999}}>
                 <div>
                     <svg width={radius * 2} height={radius * 2}>
-                        <circle cx={radius} cy={radius} r={radius} fill={props.fill} />
+                        <circle cx={radius} cy={radius} r={radius} fill='#FBC02D' />
                     </svg>
                 </div>
             </div>
@@ -36,4 +34,4 @@ const Star = props => {
     );
 };
 
-export default Star;
+export default Sun;

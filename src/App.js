@@ -1,15 +1,40 @@
-import Celestial from './Celestial.js';
-import Star from './Star.js';
+import Earth from './Earth.js';
+import Jupiter from './Jupiter.js';
+import Mars from './Mars.js';
+import Mercury from './Mercury.js';
+import Moon from './Moon.js';
+import Neptune from './Neptune.js';
+import Saturn from './Saturn.js';
+import Sun from './Sun.js';
+import Uranus from './Uranus.js';
+import Venus from './Venus.js';
 
 function App() {
   return (
-    <div className='w-100 vh-100 d-flex justify-content-center align-items-center'>
-      <Star radius={40} fill={'#FF0000'}>
-        <Celestial distance={120} radius={10} fill={'#00FF00'}>
-          <Celestial distance={120} radius={10} fill={'#00FF00'}></Celestial>
-        </Celestial>
-      </Star>
+    <div className='d-flex justify-content-center'>
+      <div className='w-0'>
+        <div className='vh-100 d-flex justify-content-center align-items-center'>
+          <Sun>
+            <Mercury distance={120} />
+            <Venus   distance={140} />
+            <Earth   distance={180}>
+              <Moon distance={20} />
+            </Earth>
+            <Mars    distance={220} />
+            <Jupiter distance={300} />
+            <Saturn  distance={380} />
+            <Uranus  distance={460} />
+            <Neptune distance={540} />
+          </Sun>
+        </div>
+      </div>
+      <div className='w-0'>
+        <div className='vw-50 vh-100 d-flex justify-content-end align-items-end p-3'>
+          <span style={{color: 'white'}}>Sizes and distances are not to scale.</span>
+        </div>
+      </div>
     </div>
+    
   );
 }
 
