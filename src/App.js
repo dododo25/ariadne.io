@@ -30,11 +30,10 @@ function App() {
       </div>
       <div className='w-0'>
         <div className='vw-50 vh-100 d-flex justify-content-end align-items-end p-3'>
-          <span style={{color: 'white'}}>Sizes and distances are not to scale.</span>
+          <span className='text-white'>Sizes and distances are not to scale.</span>
         </div>
       </div>
     </div>
-    
   );
 }
 
