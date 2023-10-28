@@ -12,6 +12,16 @@ import Venus from './Venus.js';
 function App() {
   return (
     <div className='d-flex justify-content-center'>
+      <svg className='w-0'>
+        <defs>
+          <radialGradient id='grad1' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>
+            <stop offset='100%' style={{stopColor: '#FBC02D', stopOpacity: 0.2}} />
+          </radialGradient>
+          <radialGradient id='grad2' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>
+            <stop offset='100%' style={{stopColor: '#FAFAFA', stopOpacity: 0.2}} />
+          </radialGradient>
+        </defs>
+      </svg>
       <div className='w-0'>
         <div className='vh-100 d-flex justify-content-center align-items-center'>
           <Sun>
@@ -29,7 +39,7 @@ function App() {
         </div>
       </div>
       <div className='w-0'>
-        <div className='vw-50 vh-100 d-flex justify-content-end align-items-end p-3'>
+        <div className='vw-50 vh-100 d-flex justify-content-end align-items-end p-3 pe-none'>
           <span className='text-white'>Sizes and distances are not to scale.</span>
         </div>
       </div>

@@ -1,16 +1,9 @@
-.star {
-  z-index: 999;
+.sun {
+  z-index: 9;
 }
 
-.celestial {
-  z-index: 99;
-}
-
-.orbit {
-  stroke-width: 1px;
-  stroke: #FAFAFA;
-  stroke-dasharray: 12;
-  fill: transparent;
+.content:hover {
+  cursor: pointer;
 }
 
 @keyframes spin {

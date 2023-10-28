@@ -1,34 +1,28 @@
+import { useState } from 'react';
+
 import './Celestial.css';
+
+import process from './ElementProcessor';
 
 const Sun = props => {
   const radius = 80;
-  const children = [];
+  
+  const children = process(props.children);
 
-  if (props.children && props.children.length) {
-    for (let i = 0; i < props.children.length; i++) {
-      const child = props.children[i];
+  const [orbitBorderColor, setOrbitBorderColor] = useState('transparent');
 
-      children.push(
-        <div key={i} className='w-0 d-flex justify-content-center align-items-center'>
-          {child}
-        </div>
-      );
-    }
-  } else if (props.children) {
-    children.push(
-      <div key={0} className='w-0 d-flex justify-content-center align-items-center'>
-        {props.children}
-      </div>
-    );
-  }
+  const onMouseEnter = () => setOrbitBorderColor('url(#grad1)');
+  const onMouseLeave = () => setOrbitBorderColor('transparent');
+
 
   return (
     <div className='d-flex align-items-center justify-content-center'>
       {children}
       <div className='sun w-0 d-flex align-items-center justify-content-center'>
         <div>
-          <svg className='d-block' width={radius * 2} height={radius * 2}>
-            <circle cx={radius} cy={radius} r={radius} fill='#FBC02D' />
+          <svg className='d-block' width={radius * 2 + 16} height={radius * 2 + 16}>
+            <circle cx='50%' cy='50%' r='50%' fill={orbitBorderColor} />
+            <circle className='content' cx='50%' cy='50%' r={radius} fill='#FBC02D' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} />
           </svg>
         </div>
       </div>
