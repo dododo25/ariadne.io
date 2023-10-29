@@ -2,15 +2,15 @@ import { useState } from 'react';
 
 import './Celestial.css';
 
-import {OrbitBorderRadius} from './Constants.js';
 import process from './ElementProcessor.js';
 
 const Celestial = props => {
   const distance = props.distance;
   const radius = props.radius;
+  const borderRadius = props.borderRadius;
   const shift = props.shift ? props.shift : 0;
 
-  const animation = `${props.duration}s linear 0s spin infinite`;
+  const animation = `${Math.abs(props.duration)}s linear 0s ${props.duration < 0 ? 'spin-backward' : 'spin'} infinite`;
   const children = process(props.children);
 
   const [orbitBorderColor, setOrbitBorderColor] = useState('transparent');
@@ -22,11 +22,11 @@ const Celestial = props => {
     <div className='d-flex justify-content-center align-items-center'>
       <div className='w-0 d-flex justify-content-center align-items-center'>
         <div className='pe-none'>
-          <svg className='d-block' width={(distance + OrbitBorderRadius) * 2} height={(distance + OrbitBorderRadius) * 2}>
+          <svg className='d-block' width={(distance + borderRadius) * 2} height={(distance + borderRadius) * 2}>
             <g fillRule='evenodd' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
               <path className='content pe-auto'
-                    d={`M 0 ${distance + OrbitBorderRadius} A ${distance + OrbitBorderRadius} ${distance + OrbitBorderRadius} 0 0 1 ${(distance + OrbitBorderRadius) * 2} ${distance + OrbitBorderRadius} A ${distance + OrbitBorderRadius} ${distance + OrbitBorderRadius} 0 0 1 0 ${distance + OrbitBorderRadius} z
-                        M ${OrbitBorderRadius * 2} ${distance + OrbitBorderRadius} A ${distance - OrbitBorderRadius} ${distance - OrbitBorderRadius} 0 0 1 ${distance * 2} ${distance + OrbitBorderRadius} A ${distance - OrbitBorderRadius} ${distance - OrbitBorderRadius} 0 0 1 ${OrbitBorderRadius * 2} ${distance + OrbitBorderRadius} z`}
+                    d={`M 0 ${distance + borderRadius} A ${distance + borderRadius} ${distance + borderRadius} 0 0 1 ${(distance + borderRadius) * 2} ${distance + borderRadius} A ${distance + borderRadius} ${distance + borderRadius} 0 0 1 0 ${distance + borderRadius} z
+                        M ${borderRadius * 2} ${distance + borderRadius} A ${distance - borderRadius} ${distance - borderRadius} 0 0 1 ${distance * 2} ${distance + borderRadius} A ${distance - borderRadius} ${distance - borderRadius} 0 0 1 ${borderRadius * 2} ${distance + borderRadius} z`}
                     fill={orbitBorderColor} />
             </g>
             <circle className='orbit' cx='50%' cy='50%' r={distance} stroke='#FAFAFA' strokeWidth='1' strokeDasharray='12' fill='transparent' />

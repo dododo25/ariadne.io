@@ -1,7 +1,11 @@
 import './App.css';
 
 import Background from './Background.js';
+import Callisto from './Callisto';
 import Earth from './Earth.js';
+import Europa from './Europa';
+import Ganymede from './Ganymede';
+import Io from './Io';
 import Jupiter from './Jupiter.js';
 import Mars from './Mars.js';
 import Mercury from './Mercury.js';
@@ -9,6 +13,8 @@ import Moon from './Moon.js';
 import Neptune from './Neptune.js';
 import Saturn from './Saturn.js';
 import Sun from './Sun.js';
+import Titan from './Titan';
+import Triton from './Triton';
 import Uranus from './Uranus.js';
 import Venus from './Venus.js';
 
@@ -28,7 +34,7 @@ function App() {
       <div className='w-0'>
         <div className='vh-100 d-flex justify-content-center align-items-center'>
           <div>
-            <Background radius={558} />
+            <Background radius={648} />
           </div>
         </div>
       </div>
@@ -36,15 +42,24 @@ function App() {
         <div className='vh-100 d-flex justify-content-center align-items-center'>
           <Sun>
             <Mercury distance={120} />
-            <Venus   distance={140} />
-            <Earth   distance={180}>
+            <Venus distance={150} />
+            <Earth distance={190}>
               <Moon distance={20} />
             </Earth>
-            <Mars    distance={220} />
-            <Jupiter distance={300} />
-            <Saturn  distance={380} />
-            <Uranus  distance={460} />
-            <Neptune distance={540} />
+            <Mars distance={230} />
+            <Jupiter distance={330}>
+              <Io distance={42} />
+              <Europa distance={52} />
+              <Ganymede distance={62} />
+              <Callisto distance={72} />
+            </Jupiter>
+            <Saturn distance={470}>
+              <Titan distance={50} />
+            </Saturn>
+            <Uranus distance={560} />
+            <Neptune distance={630}>
+              <Triton distance={32} />
+            </Neptune>
           </Sun>
         </div>
       </div>
