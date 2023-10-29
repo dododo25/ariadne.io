@@ -34,7 +34,7 @@ function App() {
       <div className='w-0'>
         <div className='vh-100 d-flex justify-content-center align-items-center'>
           <div>
-            <Background radius={648} />
+            <Background radius={670} />
           </div>
         </div>
       </div>
@@ -63,9 +63,9 @@ function App() {
           </Sun>
         </div>
       </div>
-      <div className='w-0'>
+      <div className='w-0 no-print'>
         <div className='vw-50 vh-100 d-flex justify-content-end align-items-end p-3 pe-none'>
-          <span className='text-white'>Sizes and distances are not to scale.</span>
+          <h6 className='text-white'>Sizes and distances are not to scale. Created by <a className='pe-auto' href='https://github.com/dododo25'>Dmytro Terekhov</a>, 2023.</h6>
         </div>
       </div>
     </div>

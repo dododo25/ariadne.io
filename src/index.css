@@ -1,3 +1,8 @@
+@font-face {
+  font-family: RobotoMono;
+  src: url('./fonts/RobotoMono-ExtraLight.ttf');
+}
+
 body {
   margin: 0;
   overflow: hidden;
@@ -6,6 +11,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  font-family: 'RobotoMono', sans-serif;
 }
 
 code {
@@ -23,4 +32,10 @@ code {
 
 .vw-50 {
   width: 50vw;
+}
+
+@media print {
+  .no-print {
+     visibility: hidden;
+  }
 }
