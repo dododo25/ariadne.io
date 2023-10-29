@@ -1,3 +1,6 @@
+import './App.css';
+
+import Background from './Background.js';
 import Earth from './Earth.js';
 import Jupiter from './Jupiter.js';
 import Mars from './Mars.js';
@@ -11,7 +14,7 @@ import Venus from './Venus.js';
 
 function App() {
   return (
-    <div className='d-flex justify-content-center'>
+    <div className='App d-flex justify-content-center'>
       <svg className='w-0'>
         <defs>
           <radialGradient id='grad1' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>
@@ -22,6 +25,13 @@ function App() {
           </radialGradient>
         </defs>
       </svg>
+      <div className='w-0'>
+        <div className='vh-100 d-flex justify-content-center align-items-center'>
+          <div>
+            <Background radius={558} />
+          </div>
+        </div>
+      </div>
       <div className='w-0'>
         <div className='vh-100 d-flex justify-content-center align-items-center'>
           <Sun>

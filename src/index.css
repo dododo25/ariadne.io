@@ -13,10 +13,6 @@ code {
     monospace;
 }
 
-div#root {
-  background-color: #212121;
-}
-
 .w-0 {
   width: 0;
 }
